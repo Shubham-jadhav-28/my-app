@@ -1,0 +1,16 @@
+<h1>{{ pageTitle }}</h1>
+
+<img src="{{ imageUrl }}" alt="shdfkjh" /><br />
+<button disabled="{{ btnStatus }}">click</button>
+
+<h2>property Binding</h2>
+<img [src]="imageUrl" alt="Image" />
+<br />
+
+<button [disabled]="btnStatus">click</button>
+<button (click)="changeMessage()">Click Me</button>
+<p>{{ message }}</p>
+<br />
+<h4>Tow way Binding</h4>
+<input type="text" [(ngModel)]="name" />
+<h4>Your name is: {{ name }}</h4>
