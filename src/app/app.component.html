@@ -2,3 +2,71 @@
   <h1>Angular 4 App</h1>
   <app-binding></app-binding>
 </div>
+<hr />
+<h1>Counter App</h1>
+<div>
+  <h2 class="count">{{ count }}</h2>
+  <div>
+    <button (click)="handleCounter('minus')" class="btn bg-red">
+      Decreament
+    </button>
+    <button (click)="handleCounter('reset')" class="btn bg-black">Reset</button>
+    <button (click)="handleCounter('plus')" class="btn bg-green">
+      Increament
+    </button>
+  </div>
+</div>
+<hr />
+<h1>If else| controlFlow</h1>
+<button (click)="hide()">Hide</button>
+<button (click)="show()">Show</button>
+<button (click)="toggle()">ToggleShow</button>
+@if(display){
+<div style="width: 200px; height: 200px; background-color: brown"></div>
+}
+<hr />
+<button (click)="toggleTwo()">
+  {{ toggleDiv ? "show blue colour" : "show gold colour" }}
+</button>
+@if(toggleDiv){
+<div style="width: 200px; height: 200px; background-color: gold"></div>
+} @else{
+<div style="width: 200px; height: 200px; background-color: blue"></div>
+}
+<hr />
+<h1>Else if | control flow</h1>
+<button (click)="hadleColor(1)">Red</button>
+<button (click)="hadleColor(2)">Green</button>
+<button (click)="hadleColor(3)">Blue</button>
+<button (click)="hadleColor(4)">Gold</button>
+<input
+  type="text"
+  (input)="hadleInput($event)"
+  placeholder="Enter color Number"
+/>
+@if(color==1){
+<div style="width: 200px; height: 200px; background-color: red"></div>
+}@else if(color==2){
+<div style="width: 200px; height: 200px; background-color: green"></div>
+}@else if(color==3){
+<div style="width: 200px; height: 200px; background-color: blue"></div>
+}@else{
+<div style="width: 200px; height: 200px; background-color: yellow"></div>
+}
+
+<hr />
+<h1>Switch case in Angular 19</h1>
+<!-- @switch(color) { @case("red"){
+<h1 style="width: 200px; height: 200px; background-color: red">Red color</h1>
+} @case("green"){
+<h1 style="width: 200px; height: 200px; background-color: green">
+  Green color
+</h1>
+} @case("blue"){
+<h1 style="width: 200px; height: 200px; background-color: blue">Blue color</h1>
+} @case("gold"){
+<h1 style="width: 200px; height: 200px; background-color: gold">Gold color</h1>
+} @default{
+<h1 style="width: 200px; height: 200px; background-color: yellow"></h1>
+}
+} } -->
