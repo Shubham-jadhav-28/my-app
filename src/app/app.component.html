@@ -56,7 +56,7 @@
 
 <hr />
 <h1>Switch case in Angular 19</h1>
-<!-- @switch(color) { @case("red"){
+@switch(colors) { @case("red"){
 <h1 style="width: 200px; height: 200px; background-color: red">Red color</h1>
 } @case("green"){
 <h1 style="width: 200px; height: 200px; background-color: green">
@@ -68,5 +68,84 @@
 <h1 style="width: 200px; height: 200px; background-color: gold">Gold color</h1>
 } @default{
 <h1 style="width: 200px; height: 200px; background-color: yellow"></h1>
+} }
+<hr />
+<h1>For loop in Angular 19</h1>
+@for(user of users ; track user){
+<h1>{{ user }}</h1>
 }
-} } -->
+<hr />
+@for(student of students ; track student;let id=$index){
+<h2>
+  <span>{{ id + 1 }}</span>
+  <span>{{ student.name }}</span>
+  <span>{{ student.age }}</span>
+  <span>{{ student.email }}</span>
+  <button (click)="getName(student.name)">Get Name</button>
+</h2>
+
+}
+<hr />
+<h2>Signals in Angular</h2>
+<!-- <button (click)="updateValue('dec')">Decreament</button>
+<h2>{{ count1() }}</h2>
+<button (click)="updateValue('inc')">Increament</button> -->
+
+<!-- diectly change value  -->
+<button (click)="count1.set(this.count1() - 1)">Decreament</button>
+<h2>{{ count1() }}</h2>
+<button (click)="count1.set(this.count1() + 1)">Increament</button>
+<!-- <h2>{{ x }}</h2>
+<button (click)="updateValue()">Update</button> -->
+<hr />
+<h2>Data Type OF Signal</h2>
+<h2>{{ data() }}</h2>
+<!-- <h2>{{ count2() }}</h2> -->
+<button (click)="updateSignal()">Update</button>
+<hr />
+<h2>Computed Signal</h2>
+<h2>{{ z() }}</h2>
+<button (click)="showComputed()">Show Value</button>
+<button (click)="updateComputed()">Update</button>
+<hr />
+<h2>Effect Angular</h2>
+<h2>{{ count3() }}</h2>
+<button (click)="userName.set('Shubham')">UpdateUser</button>
+
+<button (click)="toggleValue()">Toggle</button>
+@if(displayHeading ){
+<h2 style="background-color: yellowgreen">Page Heading</h2>
+}
+<hr />
+<h2>For Loop contextual Variable</h2>
+@for(student of students;track student; let i= $index; let f=$first;let
+l=$last){
+<!-- @if(f || l){
+<h3 style="background-color: green">
+  This is our {{ i + 1 }} and name is {{ student }}
+</h3>
+}@else{
+<h3>this is our {{ i + 1 }} user and name is {{ student }}</h3>
+} -->
+
+@if($odd){
+<h3 style="background-color: chocolate">
+  This is our {{ i }} and name is {{ student }}
+</h3>
+} @if($even){
+<h3 style="background-color: blueviolet">
+  This is our {{ i }} and name is {{ student }}
+</h3>
+<h3>Total Students: {{ $count }}</h3>
+} }
+<hr />
+<h2>To-Do List</h2>
+<input type="text" [(ngModel)]="task" placeholder="Enter new Task" />
+<button (click)="addTask()">Add Task</button>
+@for(task of taskList;track task.id){
+<ul>
+  <li>{{ task.id }}</li>
+  <li>{{ task.task }}</li>
+  <li><button>Delete</button></li>
+</ul>
+}
