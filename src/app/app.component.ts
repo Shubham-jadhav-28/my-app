@@ -1,15 +1,17 @@
 import { Component, computed, effect, Signal, signal, WritableSignal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { BindingComponent } from './binding/binding.component';
 import { FormsModule } from '@angular/forms';
 import { single } from 'rxjs';
+import { NgFor, NgIf } from '@angular/common';
+import { TodoComponent } from './todo/todo.component';
 
 @Component({
   selector: 'app-root',
   // template: `
   //   <h1>Angular 4 App</h1>`
   // imports: [RouterOutlet],
-  imports: [BindingComponent, RouterOutlet, FormsModule],
+  imports: [BindingComponent, RouterOutlet, FormsModule,NgFor,NgIf,TodoComponent,RouterLink],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
@@ -118,15 +120,43 @@ export class AppComponent {
 // For Loop Contextual Variable
 sutents =["John", "Doe", "Smith", "Alex", "Tom", "Jerry"];
 
-// To-Do List 
-task="";
-taskList:{id:number,task:string}[]=[]
 
-addTask(){
-  this.taskList.push({id:this.taskList.length+1,task:this.task})
-  console.log(this.addTask);
-  
+
+// Directtives in Angular
+// ngFor
+employee =["John", "Doe", "Smith", "Alex", "Tom", "Jerry"];
+employeeData=[
+  {
+    name:'John',
+    age:'24',
+    email:'john@gamil.com'
+  },
+  {
+    name:'Doe',
+    age:'25',
+    email:'Doe@gamil.com'
+  },
+  {
+    name:'Smith',
+    age:'28',
+    email:'smith@gamil.com'
+  },
+  {
+    name:'Alex',
+    age:'30',
+    email:'alex@gamil.com'
+  }
+]
+//  ngIf
+login=true;
+block =0;
+updateBlock(){
+  this.block++;
 }
+
+
+
+
 
   //  if else 
   display = true;

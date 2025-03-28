@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BindingComponent } from './binding/binding.component';
 import { FormsModule } from '@angular/forms';
+import { TodoComponent } from './todo/todo.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BindingComponent  
+    BindingComponent,
+    TodoComponent 
   ],
   imports: [
     BrowserModule,FormsModule 

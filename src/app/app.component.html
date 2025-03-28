@@ -1,6 +1,7 @@
 <div>
   <h1>Angular 4 App</h1>
   <app-binding></app-binding>
+  <app-todo></app-todo>
 </div>
 <hr />
 <h1>Counter App</h1>
@@ -139,13 +140,41 @@ l=$last){
 <h3>Total Students: {{ $count }}</h3>
 } }
 <hr />
-<h2>To-Do List</h2>
-<input type="text" [(ngModel)]="task" placeholder="Enter new Task" />
-<button (click)="addTask()">Add Task</button>
-@for(task of taskList;track task.id){
+
+<hr />
+<h2>Directive in Angular</h2>
+<span class="fw-semibold text-decoration-underline">ngFor Directive</span>
 <ul>
-  <li>{{ task.id }}</li>
-  <li>{{ task.task }}</li>
-  <li><button>Delete</button></li>
+  <li *ngFor="let x of employee">
+    {{ x }}
+  </li>
 </ul>
-}
+<ul>
+  <li *ngFor="let employee of employeeData">
+    {{ employee.name }} -{{ employee.age }}-{{ employee.email }}
+  </li>
+</ul>
+<h2>Directive in Angular</h2>
+<span class="fw-semibold text-decoration-underline mb-3">ngIf Directive</span>
+<div *ngIf="login; else elseBlock">
+  <a href="">logout</a>
+</div>
+<ng-template #elseBlock>
+  <h1><a href="">login</a></h1>
+</ng-template>
+<div *ngIf="block == 0">
+  <h1>Heading 0</h1>
+</div>
+<div *ngIf="block == 1">
+  <h1>Heading 1</h1>
+</div>
+<div *ngIf="block == 3">
+  <h1>Heading 3</h1>
+</div>
+<button (click)="updateBlock()">Update</button>
+<hr />
+<h2>Basic Routing In Angular</h2>
+<ul>
+  <li><a routerLink="/login">Login</a></li>
+</ul>
+<router-outlet></router-outlet>
