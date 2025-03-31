@@ -5,6 +5,11 @@
   <app-counter-app></app-counter-app>
   <app-header></app-header>
   <app-form></app-form>
+  <!-- <app-child></app-child> -->
+  <app-parent></app-parent>
+  <app-resuse-component></app-resuse-component>
+  <app-service></app-service>
+  <app-api></app-api>
   <hr />
   <h1>Pass Data to child Component</h1>
   <select #selectedUser (change)="onUserChange(selectedUser.value)">
@@ -14,6 +19,7 @@
     <option value="Jerry">Jerry</option>
   </select>
   <app-user-to-child [user]="selectedUser.value"></app-user-to-child>
+  <app-currency-converter />
 </div>
 <hr />
 

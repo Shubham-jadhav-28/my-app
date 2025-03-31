@@ -10,13 +10,19 @@ import { CounterAppComponent } from './counter-app/counter-app.component';
 import { HeaderComponent } from './header/header.component';
 import { FormComponent } from './form/form.component';
 import { UserToChildComponent } from './user-to-child/user-to-child.component';
+import { ResuseComponentComponent } from './resuse-component/resuse-component.component';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
+import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
+import { ServiceComponent } from './service/service.component';
+import { ApiComponent } from './api/api.component';
 
 @Component({
   selector: 'app-root',
   // template: `
   //   <h1>Angular 4 App</h1>`
   // imports: [RouterOutlet],
-  imports: [BindingComponent, RouterOutlet, FormsModule,NgFor,NgIf,TodoComponent,CounterAppComponent,HeaderComponent,FormComponent,UserToChildComponent],
+  imports: [BindingComponent, RouterOutlet, FormsModule,NgFor,NgIf,TodoComponent,CounterAppComponent,HeaderComponent,FormComponent,UserToChildComponent,ResuseComponentComponent,ParentComponent,CurrencyConverterComponent,ServiceComponent,ApiComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })

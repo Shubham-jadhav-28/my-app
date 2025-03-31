@@ -1,0 +1,6 @@
+<hr />
+<h2>service works!</h2>
+<button (click)="getProductData()">Load Product Data</button>
+@for(item of productData;track item){
+<h3>{{ item.name }}-{{ item.brand }}-{{ item.price }}</h3>
+}
