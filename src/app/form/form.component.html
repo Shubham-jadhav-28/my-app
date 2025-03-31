@@ -1,0 +1,44 @@
+<hr />
+<h1>Basic of Ract Form</h1>
+<!-- <form action="" method="post">
+  <input type="text" placeholder="Enter Name" [formControl]="name" />
+
+  <br />
+  <input type="text" placeholder="Enter Password" [formControl]="password" />
+
+  <br />
+  <button type="button" (click)="displayValue()">Login</button>
+  <h1>{{ nameControl.value }}</h1>
+  <h1>{{ passwordControl.value }}</h1>
+</form>
+<br /> -->
+
+<h2>Form Grouping</h2>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Enter Name" formControlName="name" />
+  <span *ngIf="name?.hasError('required')">Name Required.</span>
+  <span
+    class="bg-danger"
+    *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+    >Provide enter usr Name</span
+  >
+  <br /><br />
+  <input type="text" placeholder="Enter Password" formControlName="password" />
+  <span *ngIf="password?.hasError('required')">Password Required.</span>
+  <span
+    class="bg-danger"
+    *ngIf="password?.invalid && (password?.dirty || password?.touched)"
+    >Provide enter valid Password</span
+  >
+  <br /><br />
+  <input type="text" placeholder="Enter email" formControlName="email" />
+  <span *ngIf="email?.hasError('required')">Eamil Required.</span>
+  <span
+    class="bg-danger"
+    *ngIf="email?.invalid && (email?.dirty || email?.touched)"
+    >Provide enter valid Eamil</span
+  >
+  <br />
+  <!-- <button type="button" (click)="displayValue()">Login</button> -->
+  <button type="submit">Login</button>
+</form>

@@ -2,21 +2,21 @@
   <h1>Angular 4 App</h1>
   <app-binding></app-binding>
   <app-todo></app-todo>
+  <app-counter-app></app-counter-app>
+  <app-header></app-header>
+  <app-form></app-form>
+  <hr />
+  <h1>Pass Data to child Component</h1>
+  <select #selectedUser (change)="onUserChange(selectedUser.value)">
+    <option value="Ram">Ram</option>
+    <option value="Sham">Sham</option>
+    <option value="Tom">Tom</option>
+    <option value="Jerry">Jerry</option>
+  </select>
+  <app-user-to-child [user]="selectedUser.value"></app-user-to-child>
 </div>
 <hr />
-<h1>Counter App</h1>
-<div>
-  <h2 class="count">{{ count }}</h2>
-  <div>
-    <button (click)="handleCounter('minus')" class="btn bg-red">
-      Decreament
-    </button>
-    <button (click)="handleCounter('reset')" class="btn bg-black">Reset</button>
-    <button (click)="handleCounter('plus')" class="btn bg-green">
-      Increament
-    </button>
-  </div>
-</div>
+
 <hr />
 <h1>If else| controlFlow</h1>
 <button (click)="hide()">Hide</button>
@@ -173,8 +173,5 @@ l=$last){
 </div>
 <button (click)="updateBlock()">Update</button>
 <hr />
-<h2>Basic Routing In Angular</h2>
-<ul>
-  <li><a routerLink="/login">Login</a></li>
-</ul>
+
 <router-outlet></router-outlet>

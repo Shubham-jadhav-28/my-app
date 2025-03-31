@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BindingComponent } from './binding/binding.component';
 import { FormsModule } from '@angular/forms';
 import { TodoComponent } from './todo/todo.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -15,7 +16,7 @@ import { TodoComponent } from './todo/todo.component';
     TodoComponent 
   ],
   imports: [
-    BrowserModule,FormsModule 
+    BrowserModule,FormsModule, AppRoutingModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,30 +5,27 @@ import { FormsModule } from '@angular/forms';
 import { single } from 'rxjs';
 import { NgFor, NgIf } from '@angular/common';
 import { TodoComponent } from './todo/todo.component';
+import { AboutComponent } from './about/about.component';
+import { CounterAppComponent } from './counter-app/counter-app.component';
+import { HeaderComponent } from './header/header.component';
+import { FormComponent } from './form/form.component';
+import { UserToChildComponent } from './user-to-child/user-to-child.component';
 
 @Component({
   selector: 'app-root',
   // template: `
   //   <h1>Angular 4 App</h1>`
   // imports: [RouterOutlet],
-  imports: [BindingComponent, RouterOutlet, FormsModule,NgFor,NgIf,TodoComponent,RouterLink],
+  imports: [BindingComponent, RouterOutlet, FormsModule,NgFor,NgIf,TodoComponent,CounterAppComponent,HeaderComponent,FormComponent,UserToChildComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'my-app';
-  // counter app
-  count = 0;
-  handleCounter(val: string) {
-    if (val == 'minus') {
-      this.count = this.count - 1;
-    } else if (val == 'plus') {
-      this.count = this.count + 1;
-    } else {
-      this.count = 0;
-    }
+  username="Shubham";
+  onUserChange(user:string){
+this.username=user
   }
-
   color = 2;
   // switch case 
   colors: string = 'gold';
@@ -97,7 +94,7 @@ export class AppComponent {
   displayHeading = false;
 
   constructor() {
-    console.log('Effect triggered - count3:', this.count3());
+    // console.log('Effect triggered - count3:', this.count3());
     effect(() => {
       if (this.count3() == 2) {
         this.displayHeading =true

@@ -1,0 +1,24 @@
+<hr />
+<h2>Basic Routing In Angular</h2>
+<nav>
+  <h2>Logo</h2>
+  <ul>
+    <li>
+      <a
+        routerLinkActive="Active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLink="/"
+        >Home</a
+      >
+    </li>
+  </ul>
+  <ul>
+    <li><a routerLinkActive="Active" routerLink="/login">Login</a></li>
+  </ul>
+  <ul>
+    <li><a routerLinkActive="Active" routerLink="/about">About</a></li>
+  </ul>
+  <ul>
+    <li><a routerLinkActive="Active" routerLink="/contact">Conatact</a></li>
+  </ul>
+</nav>
